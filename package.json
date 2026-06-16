@@ -1,0 +1,2 @@
+{"scripts":{"start":"node server/server.js","dev":"nodemon server/server.js"},
+"dependencies":{"cors":"^2.8.6","jsonwebtoken":"^9.0.3","mongoose":"^9.7.0"}}
