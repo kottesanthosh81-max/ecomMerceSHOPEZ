@@ -11,11 +11,12 @@ const productRoutes = require("./routes/productRoutes");
 console.log("PRO LOAD SUC")
 const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/orderRoutes");
-
-
+const adminRoutes=require("./routes/adminRoutes");
+const { errorHandler } = require("./middleware/errorMiddleware");
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/admin",adminRoutes);
 
 
 app.get("/", (req, res) => {
@@ -32,6 +33,9 @@ app.get("/test", (req, res) => {
     res.send("SANTH NEW SERVER 123");
 });
 
+app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+
