@@ -12,7 +12,7 @@ console.log("PRO LOAD SUC")
 const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const adminRoutes=require("./routes/adminRoutes");
-const { errorHandler } = require("./middleware/errorMiddleware");
+const  errorHandler  = require("./middleware/errorMiddleware");
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
@@ -32,6 +32,12 @@ const PORT = 5000;
 app.get("/test", (req, res) => {
     res.send("SANTH NEW SERVER 123");
 });
+
+app.get("/error-test", (req, res, next) => {
+  const error = new Error("This is a test error");
+  next(error);
+});
+
 
 app.use(errorHandler);
 app.listen(PORT, () => {
