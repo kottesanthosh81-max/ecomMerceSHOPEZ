@@ -61,3 +61,5 @@ SHOPEZ E-Commerce Project
 Status
 
 Project Completed Successfully
+## GitHub Repository
+[SHOPEZ E-Commerce Project](https://github.com/kottesanthosh81-max/ecomMerceSHOPEZ)
